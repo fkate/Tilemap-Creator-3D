@@ -55,7 +55,7 @@ namespace TilemapCreator3D.EditorOnly {
 
             GridLayer = math.clamp(GridLayer, 0, map.Data.Size[GetAxis().z] - 1);
             Index = math.clamp(Index, 0, map.Palette.Count);
-            Variant = math.clamp(Variant, 0, map.Palette.GetTile(Index).Length - 1);
+            if(Index > 0 && Index <= map.Palette.Count) Variant = math.clamp(Variant, 0, map.Palette.GetTile(Index).Length - 1);
         }
 
         
