@@ -1,4 +1,4 @@
-# <img src='Documentation~/Docs/Img/Logo.png' style="display: block; height: 128px">
+![Samples](Documentation~/docs/img/logo.png)
 
 This package contains an editor editor extension for speeding up the development with mesh based tiles inside the Unity engine. <br>
 It's features and modular extensibility make it widely usable over  all kind of projects both at editor and runtime. <br>
@@ -28,7 +28,7 @@ Please refer to the documentation for it's usage. Install the sample project for
 <br>
 
 # Included samples
-![Samples](Documentation~/Docs/img/samples.png)
+![Samples](Documentation~/docs/img/samples.png)
 ## PixelMapSample
 - Shows basic usage of the included tools
 - Includes a custom character controller for testing the different features
