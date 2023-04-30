@@ -16,21 +16,20 @@ using UnityEngine.UIElements;
 namespace TilemapCreator3D.EditorOnly {
     [Overlay(typeof(SceneView), ID, true)]
     [Icon("Icons/Overlays/GridAndSnap.png")]
-    internal class TileMapBrushToolbar : ToolbarOverlay {
+    internal class TilemapBrushToolbar : ToolbarOverlay {
 
-        public const string ID = "TileMap Brush";
+        public const string ID = "Tilemap Brush";
 
-
-        public TileMapBrushToolbar() : base(
-            "TileMap/Grids",
-            "TileMap/Tile",
-            "TileMap/Flags"
+        public TilemapBrushToolbar() : base(
+            "Tilemap/Grids",
+            "Tilemap/Tile",
+            "Tilemap/Flags"
         ){ }
 
     }
     
-    [EditorToolbarElement("TileMap/Grids", typeof(SceneView))]
-    internal class TileMapGridToggle : EditorToolbarDropdownToggle, IAccessContainerWindow {
+    [EditorToolbarElement("Tilemap/Grids", typeof(SceneView))]
+    internal class TilemapGridToggle : EditorToolbarDropdownToggle, IAccessContainerWindow {
 
         private class GridPopup : PopupWindowContent {
 
@@ -69,8 +68,8 @@ namespace TilemapCreator3D.EditorOnly {
         public EditorWindow containerWindow { get; set; }
 
 
-        public TileMapGridToggle() {
-            name = "TileMap Grid";
+        public TilemapGridToggle() {
+            name = "Tilemap Grid";
             tooltip = "Toggle grid";
             icon = EditorGUIUtility.Load("Packages/com.fkate.tilemap3d/Editor/Icons/TileGrid.png") as Texture2D;
 
@@ -100,8 +99,8 @@ namespace TilemapCreator3D.EditorOnly {
 
     }
 
-    [EditorToolbarElement("TileMap/Tile", typeof(SceneView))]
-    internal class TileMapTileDropdown : EditorToolbarDropdown {
+    [EditorToolbarElement("Tilemap/Tile", typeof(SceneView))]
+    internal class TilemapTileDropdown : EditorToolbarDropdown {
 
         private enum TileRotation {
             _0deg = 0,
@@ -152,8 +151,8 @@ namespace TilemapCreator3D.EditorOnly {
         }
 
 
-        public TileMapTileDropdown() {
-            name = "TileMap Brush";
+        public TilemapTileDropdown() {
+            name = "Tilemap Brush";
             tooltip = "Brush settings";
             icon = EditorGUIUtility.Load("Packages/com.fkate.tilemap3d/Editor/Icons/TileBrush.png") as Texture2D;
 
@@ -169,8 +168,8 @@ namespace TilemapCreator3D.EditorOnly {
 
     }
 
-    [EditorToolbarElement("TileMap/Flags", typeof(SceneView))]
-    internal class TileMapFlagsFoldout : VisualElement {
+    [EditorToolbarElement("Tilemap/Flags", typeof(SceneView))]
+    internal class TilemapFlagButtons : ToolbarButton {
 
         private TilemapSettings _settings;
 
@@ -180,11 +179,12 @@ namespace TilemapCreator3D.EditorOnly {
         private List<Matrix4x4> _transforms;
 
 
-        public TileMapFlagsFoldout() {
-            name = "TileMap Flags";
+        public TilemapFlagButtons() {
+            name = "Tilemap Flags";
             tooltip = "Flag settings";
             
             StyleSheet style = EditorGUIUtility.Load("Packages/com.fkate.tilemap3d/Editor/Styles/TilemapToolbar.uss") as StyleSheet;
+
 
             _settings = TilemapSettings.instance;
             _settings.OnTilePick += RefreshToggles;
@@ -194,11 +194,9 @@ namespace TilemapCreator3D.EditorOnly {
             root.AddToClassList("unity-base-field--no-label");
             root.AddToClassList("unity-editor-toolbar-element");
             root.AddToClassList("tilemap-editor-toolbar-flags");
+            root.RemoveFromClassList("unity-toolbar-button");
 
             root.styleSheets.Add(style);
-
-            VisualElement toolbar = new VisualElement();
-            toolbar.AddToClassList("tilemap-editor-flagToolbar");
 
             _toggles = new List<ToolbarToggle>(8);
 
@@ -228,11 +226,9 @@ namespace TilemapCreator3D.EditorOnly {
                 VisualElement toggleLabel = toggle.Query<VisualElement>(className: "unity-toggle__input");
                 toggleLabel.Add(flagIcon);
 
-                toolbar.Add(toggle);
+                root.Add(toggle);
                 _toggles.Add(toggle);
             }
-
-            root.Add(toolbar);
         }
 
 

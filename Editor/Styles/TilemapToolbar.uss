@@ -1,15 +1,15 @@
 .tilemap-editor-toolbar-flags{
-	border-radius: 4px;
+	width: auto;
+	flex-direction: row;
+	border-radius: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	overflow: hidden;
+	background-color: var(--unity-colors-button-background);
 }
 
 .overlay-layout--toolbar-vertical .tilemap-editor-toolbar-flags{
 	flex-direction: column;
-}
-
-.tilemap-editor-flagToolbar {
-	width: auto;
-	flex-direction: row;
-	background-color: rgba(103, 103, 103, 1);
 }
 
 .tilemap-editor-foldout {
@@ -28,7 +28,6 @@
 	min-width: 0px;
 	width: 30px;
 	margin: 0px;
-	margin-left: 1px;
 	border-radius: 0;
 }
 
