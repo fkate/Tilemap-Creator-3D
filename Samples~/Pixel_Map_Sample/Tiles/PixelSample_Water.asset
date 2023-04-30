@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e71ebfdd92a51043be0f6ee64229708, type: 3}
+  m_Name: PixelSample_Water
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: c4571d6a187162d409acc4a2274f0cc5, type: 2}
+  CollisionLayer: 4
+  NavigationArea: 0
+  PreviewOrientation: {x: 20, y: 20}
+  EightBitMask: 0
+  Orientation2D: 0
+  Variants:
+  - Info:
+      Name: 
+      Mesh: {fileID: -6769214164185090501, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 0
+    Mask:
+      Type: 0
+      Mask: 0
+      Variants: 
+  - Info:
+      Name: 
+      Mesh: {fileID: -2256902234221395796, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 0
+    Mask:
+      Type: 1
+      Mask: 16
+      Variants: 400000000800000002000000
+  - Info:
+      Name: 
+      Mesh: {fileID: -4270519608471497230, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 0
+    Mask:
+      Type: 1
+      Mask: 24
+      Variants: 420000001800000042000000
+  - Info:
+      Name: 
+      Mesh: {fileID: -1056717464928533288, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 0
+    Mask:
+      Type: 1
+      Mask: 18
+      Variants: 50000000480000000a000000
+  - Info:
+      Name: 
+      Mesh: {fileID: 4565433839699826893, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 0
+    Mask:
+      Type: 1
+      Mask: 26
+      Variants: 52000000580000004a000000
+  - Info:
+      Name: 
+      Mesh: {fileID: 8760989875873613999, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 0
+    Mask:
+      Type: 0
+      Mask: 90
+      Variants: 

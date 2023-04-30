@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e71ebfdd92a51043be0f6ee64229708, type: 3}
+  m_Name: MapSample_Road
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: 6e9530b8c86f51641b39aaf421389a3a, type: 2}
+  CollisionLayer: 0
+  NavigationArea: 2
+  PreviewOrientation: {x: 0, y: 90}
+  EightBitMask: 0
+  NoBorder: 1
+  Orientation2D: 0
+  Isolate: 0
+  Variants:
+  - Info:
+      Mesh: {fileID: 1220458114217829902, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      CollisionMesh: {fileID: 1220458114217829902, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      Collision: 4
+    Mask:
+      Type: 0
+      Mask: 0
+      Variants: 
+  - Info:
+      Mesh: {fileID: -2046168829206276837, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      CollisionMesh: {fileID: -2046168829206276837, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      Collision: 4
+    Mask:
+      Type: 1
+      Mask: 16
+      Variants: 400000000800000002000000
+  - Info:
+      Mesh: {fileID: -3016801825565858393, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      CollisionMesh: {fileID: -3016801825565858393, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      Collision: 4
+    Mask:
+      Type: 1
+      Mask: 24
+      Variants: 420000001800000042000000
+  - Info:
+      Mesh: {fileID: -2235564855433077237, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      CollisionMesh: {fileID: -2235564855433077237, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      Collision: 4
+    Mask:
+      Type: 1
+      Mask: 18
+      Variants: 50000000480000000a000000
+  - Info:
+      Mesh: {fileID: -1046366615879006865, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      CollisionMesh: {fileID: -1046366615879006865, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      Collision: 4
+    Mask:
+      Type: 1
+      Mask: 26
+      Variants: 52000000580000004a000000
+  - Info:
+      Mesh: {fileID: 8161468496515083924, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      CollisionMesh: {fileID: 8161468496515083924, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+      Collision: 4
+    Mask:
+      Type: 0
+      Mask: 90
+      Variants: 

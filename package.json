@@ -1,0 +1,28 @@
+{
+  "name": "com.fkate.tilemap3d",
+  "description": "Contains components and editors for authoring three dimensional tilemaps.\nSub component based approach including modules for mesh, collider and NavMesh generation from painted maps.\nIncludes tile types for single, multi and auto tiles.",
+  "version": "1.0.0",
+  "displayName": "Tilemap Creator 3D",
+  "dependencies": {
+    "com.unity.mathematics": "1.2.1",
+    "com.unity.collections": "1.2.4",
+    "com.unity.editorcoroutines": "1.0.0"
+  },
+  "keywords": [
+    "editor"
+  ],
+  "type": "tool",
+  "unity": "2021.3",
+  "samples": [
+    {
+      "displayName": "Pixel Map",
+      "description": "Contains basic usecase samples for the tilemap modules",
+      "path": "Samples~/Pixel_Map_Sample"
+    },
+    {
+      "displayName": "World Map",
+      "description": "Contains examples on how to extend the tool",
+      "path": "Samples~/World_Map_Sample"
+    }
+  ]
+}

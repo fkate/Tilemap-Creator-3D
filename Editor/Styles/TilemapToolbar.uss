@@ -1,0 +1,46 @@
+.tilemap-editor-toolbar-flags{
+	border-radius: 4px;
+}
+
+.overlay-layout--toolbar-vertical .tilemap-editor-toolbar-flags{
+	flex-direction: column;
+}
+
+.tilemap-editor-flagToolbar {
+	width: auto;
+	flex-direction: row;
+	background-color: rgba(103, 103, 103, 1);
+}
+
+.tilemap-editor-foldout {
+	width: 37px;
+	margin: 0px;
+	border-radius: 0px;
+}
+
+.overlay-layout--toolbar-vertical .tilemap-editor-flagToolbar {
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.tilemap-editor-flagToggle {
+	height: 20px;
+	min-width: 0px;
+	width: 30px;
+	margin: 0px;
+	margin-left: 1px;
+	border-radius: 0;
+}
+
+.overlay-layout--toolbar-vertical .tilemap-editor-flagToggle {
+	width: 100%;
+	margin: 0px;
+	margin-top: 1px;
+}
+
+.overlay-layout--toolbar-vertical .unity-toolbar-button {
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: flex-start;
+	padding-top: 2px;
+}

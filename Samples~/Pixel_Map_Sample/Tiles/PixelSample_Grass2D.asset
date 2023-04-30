@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e71ebfdd92a51043be0f6ee64229708, type: 3}
+  m_Name: PixelSample_Grass2D
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: df5812252ba252e458e028e0ea615e8d, type: 2}
+  CollisionLayer: 0
+  NavigationArea: 0
+  PreviewOrientation: {x: 20, y: 20}
+  EightBitMask: 1
+  NoBorder: 1
+  Orientation2D: 1
+  Isolate: 0
+  Variants:
+  - Info:
+      Mesh: {fileID: 1561329762080483012, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 64
+      Variants: 
+  - Info:
+      Mesh: {fileID: -2774206240508401126, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 208
+      Variants: 68000000
+  - Info:
+      Mesh: {fileID: -2668356972260448150, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 248
+      Variants: 
+  - Info:
+      Mesh: {fileID: 7792445426215390975, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 66
+      Variants: 
+  - Info:
+      Mesh: {fileID: 1888981660390306200, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 214
+      Variants: 6b000000
+  - Info:
+      Mesh: {fileID: 5830037663989252264, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 255
+      Variants: 
+  - Info:
+      Mesh: {fileID: -6221128118014130957, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 0
+      Variants: 
+  - Info:
+      Mesh: {fileID: 3911697900953224836, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 16
+      Variants: 08000000
+  - Info:
+      Mesh: {fileID: -6037707428181654696, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 24
+      Variants: 
+  - Info:
+      Mesh: {fileID: -3037618877482734827, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 216
+      Variants: 78000000
+  - Info:
+      Mesh: {fileID: -6068147198345192617, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 88
+      Variants: 
+  - Info:
+      Mesh: {fileID: 4447210622851867953, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 2
+      Variants: 
+  - Info:
+      Mesh: {fileID: -1185405478768085955, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 22
+      Variants: 0b000000
+  - Info:
+      Mesh: {fileID: -75284936931579235, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 31
+      Variants: 
+  - Info:
+      Mesh: {fileID: 6339934806381708822, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 223
+      Variants: 7f000000
+  - Info:
+      Mesh: {fileID: -4382445209155995814, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 95
+      Variants: 
+  - Info:
+      Mesh: {fileID: 8854648729331924060, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 222
+      Variants: 7b000000
+  - Info:
+      Mesh: {fileID: -94780397861865610, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 90
+      Variants: 
+  - Info:
+      Mesh: {fileID: -6720990524389638213, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 254
+      Variants: fb000000
+  - Info:
+      Mesh: {fileID: 4679291100452208755, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 250
+      Variants: 
+  - Info:
+      Mesh: {fileID: 4657323215824173004, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 2
+      Mask: 30
+      Variants: 1b000000
+  - Info:
+      Mesh: {fileID: 613170134606275211, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+      CollisionMesh: {fileID: 0}
+      Collision: 1
+    Mask:
+      Type: 0
+      Mask: 26
+      Variants: 

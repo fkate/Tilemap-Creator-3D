@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a0ff3def4de4f408179476bda4993e, type: 3}
+  m_Name: PixelSample_FloorTiles
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: df5812252ba252e458e028e0ea615e8d, type: 2}
+  CollisionLayer: 0
+  NavigationArea: 0
+  PreviewOrientation: {x: 20, y: 20}
+  Variants:
+  - Mesh: {fileID: 5467705030471576651, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 3
+  - Mesh: {fileID: 7435488842988369516, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 3
+  - Mesh: {fileID: -1471915109844856378, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 3
+  - Mesh: {fileID: -8964617063411958681, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 3

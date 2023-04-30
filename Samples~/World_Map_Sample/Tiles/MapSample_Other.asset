@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a0ff3def4de4f408179476bda4993e, type: 3}
+  m_Name: MapSample_Other
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: 6e9530b8c86f51641b39aaf421389a3a, type: 2}
+  CollisionLayer: 0
+  NavigationArea: 1
+  PreviewOrientation: {x: 20, y: 20}
+  Variants:
+  - Mesh: {fileID: -4532283240223554854, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 1
+  - Mesh: {fileID: 2434447421095949126, guid: f4052364a7853fa4bb04b40a486a88fa, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 0

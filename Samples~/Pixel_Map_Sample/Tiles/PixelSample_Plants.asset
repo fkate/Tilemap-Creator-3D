@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a0ff3def4de4f408179476bda4993e, type: 3}
+  m_Name: PixelSample_Plants
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: c4571d6a187162d409acc4a2274f0cc5, type: 2}
+  CollisionLayer: 0
+  TileInfo:
+    Name: 
+    Mesh: {fileID: -710132387105968623, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 0
+  PreviewOrientation: {x: 20, y: 20}
+  Variants:
+  - Name: 
+    Mesh: {fileID: -710132387105968623, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 0
+  - Name: 
+    Mesh: {fileID: 9103412536451510288, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 0
+  - Name: 
+    Mesh: {fileID: -84809459145646691, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 0
+  - Name: 
+    Mesh: {fileID: -6406369764948320581, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: 0}
+    Collision: 0
