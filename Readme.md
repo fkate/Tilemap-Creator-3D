@@ -23,6 +23,7 @@ Unity 2021.3+
 # Install instructions
 Start a new Unity Project and navigate to the Package Manager (Window > Package Manager). <br>
 Open the [+] dropdown and select "Add package from git URL ...". The URL is the adress of this repository. <br>
+The correct address should be: https://github.com/fkate/Tilemap-Creator-3D.git <br>
 Please refer to the documentation for it's usage. Install the sample project for a usecase example.
 
 <br>
