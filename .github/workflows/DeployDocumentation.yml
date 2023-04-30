@@ -1,8 +1,9 @@
-name: DeployDocs
+name: Deploy Documentation
 on:
   push:
     branches:
       - main
+      
 permissions:
   contents: write
 jobs:
@@ -18,6 +19,8 @@ jobs:
           key: ${{ github.ref }}
           path: .cache
           
-      - name: deploypages
+      - run: pip install mkdocs
+          
+      - name: deploy
         run: mkdocs gh-deploy --force
-        working-directory: Documentation~
+        working-directory: ./Documentation~
