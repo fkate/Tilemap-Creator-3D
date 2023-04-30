@@ -17,5 +17,7 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - working-directory: Documentation~
-      - run: mkdocs gh-deploy --force
+          
+      - name: deploy documentation
+        run: mkdocs gh-deploy --force
+        working-directory: Documentation~
