@@ -52,7 +52,7 @@ https://fkate.github.io/Tilemap-Creator-3D/
 # FAQ
 ## Can this be used to create games of genre X?
 | Genre     | Support |  Comments                                                             |
-|-----------|:-------:|:----------------------------------------------------------------------|
+|:----------|:--------|:----------------------------------------------------------------------|
 | Topdown   | Yes     | Main focus of the tool                                                |
 | Rougelike | Yes     | Procedural map generation not included                                |
 | 2.5D      | "Yes"   |  Limited support on modules                                           |
@@ -60,7 +60,7 @@ https://fkate.github.io/Tilemap-Creator-3D/
 | Blockgame | No      | Data is stored in a fixed length array (not intended for huge worlds) |
 
 ## Why only Unity 2021+
-Unity 2020 does not support the new Mesh API and 2021 does not support custom toolbars.
+Unity 2019 does not support the new Mesh API and 2020 does not support custom toolbars.
 
 ## Where can I find the documentation?
 There is a subfolder called ~Documentation. In there you can find a selection of articles about the general usage.

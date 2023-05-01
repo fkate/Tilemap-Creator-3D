@@ -21,7 +21,7 @@ For this section I assume you are somewhat familiar with 3D modelling tools and 
 Right click in your project browser and choose **[MapTool > TileType]**. <br>
 
 | Type   | Usage                                                            |
-|--------|:-----------------------------------------------------------------|
+|:-------|:-----------------------------------------------------------------|
 | Single | Basic tile                                                       |
 | Multi  | Supports variations for a clean grouping of tiles in the browser |
 | Auto   | Sub tiles that get choosen depending on their neighbours         |
@@ -41,7 +41,7 @@ On a single tile you have one while on multi and auto tiles you have a list of t
 
 ## Collider types
 | Type         | Usage                                                                                      |
-|--------------|:-------------------------------------------------------------------------------------------|
+|:-------------|:-------------------------------------------------------------------------------------------|
 | None         | No collision                                                                               |
 | Box          | Full tile collision. Should be choosen most of the time for optimal collider performance   |
 | Box extend   | Full tile collision that extends upwards until it hits another tile                        |
@@ -61,7 +61,7 @@ On a single tile you have one while on multi and auto tiles you have a list of t
 - Sub variations within auto tiling are not supported due to the complexity. They can still be added via merge flags though.
 
 | Type    | Usage                                |
-|---------|:-------------------------------------|
+|:--------|:-------------------------------------|
 | Single  | No rotation masks                    |
 | Rotated | Masks for 90° / 180° / 270° rotation |
 | Flip    | Mask for 180° rotation               |

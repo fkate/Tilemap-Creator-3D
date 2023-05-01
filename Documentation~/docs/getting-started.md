@@ -43,7 +43,7 @@ The whole tool is navigated by a few key combos. <br>
 
 ## Input mapping
 | Input               | Action                                             |
-|---------------------|:---------------------------------------------------|
+|:--------------------|:---------------------------------------------------|
 | Right click         | Place tile (hold for dragging out a box)           |
 | Right click + Shift | Delete tile. (hold for dragging out a box)         |
 | Left click + Shift  | Pick a tile                                        |
