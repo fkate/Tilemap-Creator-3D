@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Tilemap3D - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tilemap3D";
+        var mkdocs_page_input_path = "api/Tilemap3D.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tiles/">Tiles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modules/">Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extensions/">Writing Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Tilemap3D</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapData/">TilemapData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AutoTile/">AutoTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapSettings/">TilemapSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Scripting API &raquo;</li>
+      <li>Tilemap3D</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tilemap3d">Tilemap3D</h1>
+<p>Main component for tilemap generation. Use Data modification in combination with one of the bake methods to update the map. <br></p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>TilePalette</strong></td>
+<td align="left">Palette</td>
+<td align="left">Tile palette stored in the map</td>
+</tr>
+<tr>
+<td align="left"><strong>TileMapData</strong></td>
+<td align="left">Data</td>
+<td align="left">Map data. Read and write to it to modify the map</td>
+</tr>
+<tr>
+<td align="left"><strong>float3</strong></td>
+<td align="left">GridSize</td>
+<td align="left">Size of a single cell. Should match the provided  tile mesh size</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Width</td>
+<td align="left">Getter to Data.Width</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Height</td>
+<td align="left">Getter to Data.Height</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Depth</td>
+<td align="left">Getter to Data.Depth</td>
+</tr>
+<tr>
+<td align="left">int3</td>
+<td align="left">Size</td>
+<td align="left">Getter to Data.Size</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Length</td>
+<td align="left">Getter to Data.Length</td>
+</tr>
+<tr>
+<td align="left">Box3D</td>
+<td align="left">Area</td>
+<td align="left">Local bounds of the map</td>
+</tr>
+<tr>
+<td align="left">TileMapData.Tile</td>
+<td align="left">this[int3]</td>
+<td align="left">Indexer to Data[int3]</td>
+</tr>
+<tr>
+<td align="left">ITilemapModule</td>
+<td align="left">Modules</td>
+<td align="left">Current list of tilemap modules in children</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">BakeDynamic(Box3D area)</td>
+<td align="left">Rebake dynamic module content within area</td>
+</tr>
+<tr>
+<td align="left">BakeDynamic()</td>
+<td align="left">Rebake dynamic module content for the whole map</td>
+</tr>
+<tr>
+<td align="left">Bake()</td>
+<td align="left">Bake static module content for the whole map</td>
+</tr>
+<tr>
+<td align="left">RefreshModules()</td>
+<td align="left">Force update to module list</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br></p>
+<h1 id="tilemap3dutility">Tilemap3DUtility</h1>
+<p>Static extension methods for Tilemap3D. <br></p>
+<h2 id="static-methods">Static Methods</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GetLayerPlane(int axis, int layer)</td>
+<td align="left">Calculate a local space plane on the given axis (0x-1y-2z) for the given layer</td>
+</tr>
+<tr>
+<td align="left">RaycastLayer(this Tilemap3D map, Ray ray, Plane plane, out int3 hit)</td>
+<td align="left">Raycast a local space plane. Input ray is in worldspace and will be transformed into grid space. Returns false if hit is outside bounds</td>
+</tr>
+<tr>
+<td align="left">GridToWorld(this Tilemap3D map, int3 position, float3 pivot)</td>
+<td align="left">Returns the map position at the given pivot (0-1 range) in world coordinates</td>
+</tr>
+<tr>
+<td align="left">GridToWorld(this Tilemap3D map, int3 position)</td>
+<td align="left">Returns the map position in world coordinates</td>
+</tr>
+<tr>
+<td align="left">GridToLocal(this Tilemap3D map, int3 position, float3 pivot)</td>
+<td align="left">Returns the map position at the given pivot (0-1 range) in local coordinates</td>
+</tr>
+<tr>
+<td align="left">GridToLocal(this Tilemap3D map, int3 position)</td>
+<td align="left">Returns the map position in local coordinates</td>
+</tr>
+<tr>
+<td align="left">WorldToGrid(this Tilemap3D map, float3 position)</td>
+<td align="left">Returns the map grid position at given world position (this includes out of bounds)</td>
+</tr>
+<tr>
+<td align="left">ReconstructPosition(this Tilemap3D map, int index)</td>
+<td align="left">Converts index into xyz coordinate</td>
+</tr>
+<tr>
+<td align="left">InBounds(this Tilemap3D map, int3 position)</td>
+<td align="left">Checks if the given grid coordinates are in bounds</td>
+</tr>
+<tr>
+<td align="left">PostProcessTiles(this Tilemap3D map, Box3D area)</td>
+<td align="left">Post processes area and it's neighbours. Returns the area containing it's neighbours</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../faq/" class="btn btn-neutral float-left" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../TilemapData/" class="btn btn-neutral float-right" title="TilemapData">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../faq/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../TilemapData/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

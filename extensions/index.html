@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Writing Extensions - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Writing Extensions";
+        var mkdocs_page_input_path = "extensions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tiles/">Tiles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../modules/">Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Writing Extensions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#adding-a-custom-tile-type">Adding a custom tile type</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#add-a-custom-module">Add a custom module</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#register-an-extension-in-the-editor">Register an extension in the editor</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/Tilemap3D/">Tilemap3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapData/">TilemapData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/AutoTile/">AutoTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapSettings/">TilemapSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Manual &raquo;</li>
+      <li>Writing Extensions</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="extending-the-tool">Extending the tool</h1>
+<p>The package has multiple interfaces that allow the user to add his/her custom script components into the pipeline. <br>
+I reccomend taking a look at the WorldMap sample which shows some actual implementations. <br></p>
+<h2 id="adding-a-custom-tile-type">Adding a custom tile type</h2>
+<p>Create a new class extending the Tilemap3D.BaseTile. <br>
+Tile types are centered around the TileInfo struct which consists of { Mesh / CollisionType / CollisionMesh } <br>
+Each tile also recives a sub index that can be used if a tile has multiple variants. <br>
+If your tile targets a custom module that does not need this information (example one that adds GameObjects) feel free to return an empty TileInfo. <br></p>
+<pre><code class="language-csharp">public class CustomTile:BaseTile {    
+    // How many sub tile variants are expected
+    public override int Length { get; }
+
+    // Give reference to the tile info struct used to store mesh / collisiontype / collisionmesh at the requested variant index
+    public override TileInfo GetInfo(int index);
+
+    // Which mesh should the picker show?
+    public override Mesh GetTilePreview(int index) =&gt; null;
+
+    // This will run after tile placement is complete. It can be used for adjusting tiles depending on their environment
+    public override void PostProcessTile(ref TileMapData data, int3 pos) { }
+}
+</code></pre>
+<h2 id="add-a-custom-module">Add a custom module</h2>
+<p>Create a Monobehaviour that includes the interface Tilemap3D.ITilemapModule. <br>
+To register a module for easier access refer to the next section. <br>
+The structure of a module is as follows: <br></p>
+<pre><code class="language-csharp">    public class MyModule:Monobehaviour, ITilemapModule {
+        // Used to update a specific part of the tilemap immediatly on tile placement. Keep heavy calculations to a minimum
+        public void BakePartial(Tilemap map, Box3D area) {}
+
+        // Bake calculation or garbage heavy data on demans
+        void Bake(Tilemap map);
+
+        // Clear baked data on demand
+        void Clear();
+    }
+</code></pre>
+<h2 id="register-an-extension-in-the-editor">Register an extension in the editor</h2>
+<p>Create a new static class and and give it an appropriate name. <br>
+The class needs the <strong>[InitializeOnLoad]</strong> attribute to register before everything else. <br>
+Inside the class add a static constrctor with the same name as the class. <br>
+Use the TilemapSettings class inside the Tilemap3D.EditorOnly namespace to register your additions. <br></p>
+<pre><code class="language-csharp">    [InitializeOnLoad]
+    public class MyRegisterClass {
+        static MyRegisterClass () {
+            // Register a module to the Tilemap dropdown
+            TilemapSettings.instance.RegisterModule&lt;MyCustomModule&gt;();
+
+            // Register a flag to be shown in the toolbar (Up to 8 flags in total. Flag 0 and 1 are already used by autotile)
+            TilemapSettings.instance.RegisterFlagContent(new GUIContent(image, tooltip), yourID);
+        }
+    }
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../samples/" class="btn btn-neutral float-left" title="Samples"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../faq/" class="btn btn-neutral float-right" title="FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../samples/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../faq/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

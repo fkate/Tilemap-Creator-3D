@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>TilemapSettings - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "TilemapSettings";
+        var mkdocs_page_input_path = "api/TilemapSettings.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tiles/">Tiles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modules/">Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extensions/">Writing Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Tilemap3D/">Tilemap3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapData/">TilemapData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AutoTile/">AutoTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">TilemapSettings</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Scripting API &raquo;</li>
+      <li>TilemapSettings</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tilemapsettings-editor-only">TilemapSettings (Editor only)</h1>
+<p>Settings object that gets stored in ProjectRoot/UserSettings. Save serialization is called when switching away from an active tilemap. <br>
+Values are mainly modified by package interfaces but can be freely set for extensions as well. <br></p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">Index</td>
+<td align="left">Active index of the cursor (zero is empty)</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">Variant</td>
+<td align="left">Active sub index of the cursor</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">Rotation</td>
+<td align="left">Active rotation of the cursor (0-3)</td>
+</tr>
+<tr>
+<td align="left"><strong>TileFlags</strong></td>
+<td align="left">Flags</td>
+<td align="left">Active flags of the cursor</td>
+</tr>
+<tr>
+<td align="left"><strong>bool</strong></td>
+<td align="left">ShowGrid</td>
+<td align="left">Shows or hides the grid</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">GridLayer</td>
+<td align="left">Active working layer of the grid</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">GridAxis</td>
+<td align="left">Display axis of the grid (0=x 1=y 2=z)</td>
+</tr>
+<tr>
+<td align="left"><strong>float3</strong></td>
+<td align="left">GridSize</td>
+<td align="left">Size of a single cell. Should match the provided  tile mesh size</td>
+</tr>
+<tr>
+<td align="left"><strong>bool</strong></td>
+<td align="left">PreviewMode</td>
+<td align="left">Toggles between shape and textured preview</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">Randomizer</td>
+<td align="left">Tile placing setting (0=none 1=variant 2=rotation 3=both)</td>
+</tr>
+<tr>
+<td align="left"><strong>float</strong></td>
+<td align="left">ExplorerTileSize</td>
+<td align="left">Display size of tiles in the explorer (should be set via slider)</td>
+</tr>
+<tr>
+<td align="left"><strong>Action</strong></td>
+<td align="left">OnTilePick</td>
+<td align="left">Subscribe to recive a change notification once a tile is picked</td>
+</tr>
+<tr>
+<td align="left">List&lt;System.Type&gt;</td>
+<td align="left">Modules</td>
+<td align="left">List of registered modules</td>
+</tr>
+<tr>
+<td align="left">GUIContent[]</td>
+<td align="left">FlagContent</td>
+<td align="left">List of registered flag buttons</td>
+</tr>
+<tr>
+<td align="left">Material</td>
+<td align="left">PreviewMaterial</td>
+<td align="left">Single instance to ("Hidden/TilePreview")</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SaveSettings()</td>
+<td align="left">Save current settings to file</td>
+</tr>
+<tr>
+<td align="left">SyncToMap(Tilemap3D map)</td>
+<td align="left">Limit ranges to current tilemap</td>
+</tr>
+<tr>
+<td align="left">GetAxis()</td>
+<td align="left">Get axis order from settings as int3</td>
+</tr>
+<tr>
+<td align="left">RegisterModule&lt;iTilemapModule&gt;()</td>
+<td align="left">Register a module to show in the module menu</td>
+</tr>
+<tr>
+<td align="left">RegisterFlagContent(GUIContent content, int id)</td>
+<td align="left">Register a custom flag (0 and 1 are used by autotiling)</td>
+</tr>
+<tr>
+<td align="left">SettingsFromTile(TilemapData.Tile tile)</td>
+<td align="left">Copy the tile data to settings and call OnTilePick</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../TilemapNavigator/" class="btn btn-neutral float-left" title="TilemapNavigator"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../TilemapGUIUtility/" class="btn btn-neutral float-right" title="TilemapGUIUtility">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../TilemapNavigator/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../TilemapGUIUtility/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

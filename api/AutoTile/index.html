@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>AutoTile - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AutoTile";
+        var mkdocs_page_input_path = "api/AutoTile.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tiles/">Tiles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modules/">Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extensions/">Writing Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Tilemap3D/">Tilemap3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapData/">TilemapData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">AutoTile</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inherited-properties">Inherited Properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapSettings/">TilemapSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Scripting API &raquo;</li>
+      <li>AutoTile</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="autotile">AutoTile</h1>
+<p>Class describing a tile using multiple variants to create borders.</p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>TileInfoMask[]</strong></td>
+<td align="left">Variants</td>
+<td align="left">Collection of sub tiles using TileMasks</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">Length</td>
+<td align="left">Sub tile count</td>
+</tr>
+<tr>
+<td align="left"><strong>bool</strong></td>
+<td align="left">EightBitMask</td>
+<td align="left">Does the algorithm use eight or four directions</td>
+</tr>
+<tr>
+<td align="left"><strong>bool</strong></td>
+<td align="left">NoBorder</td>
+<td align="left">Merges tiles with the border</td>
+</tr>
+<tr>
+<td align="left"><strong>bool</strong></td>
+<td align="left">Orientation2D</td>
+<td align="left">Is the algorithm processing the XY layer instead of XZ</td>
+</tr>
+<tr>
+<td align="left"><strong>bool</strong></td>
+<td align="left">Isloate</td>
+<td align="left">Ignore tile flags and never merge to other tiles</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="inherited-properties">Inherited Properties</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Material</strong></td>
+<td align="left">Material</td>
+<td align="left">Shared material of all tile meshes</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">CollisionLayer</td>
+<td align="left">Layer generated colliders are put on</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left">NavigationArea</td>
+<td align="left">Area for NavMesh generation</td>
+</tr>
+<tr>
+<td align="left"><strong>TileInfo</strong></td>
+<td align="left">this[int]</td>
+<td align="left">Indexer to GetInfo()</td>
+</tr>
+<tr>
+<td align="left"><strong>Vector2</strong></td>
+<td align="left">PreviewOrientation</td>
+<td align="left">Orientation of generated previews</td>
+</tr>
+<tr>
+<td align="left"><strong>Quatenrion</strong></td>
+<td align="left">PreviewRotation</td>
+<td align="left">PreviewOrientation as Quaternion</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GetInfo(int index)</td>
+<td align="left">Get sub tile at sub tile index</td>
+</tr>
+<tr>
+<td align="left">GetTilePreview(int index)</td>
+<td align="left">Always returns first variant</td>
+</tr>
+<tr>
+<td align="left">PostProcessTile(TilemapData data, int3 pos)</td>
+<td align="left">Fix data via auto tiling algorithm</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../MultiTile/" class="btn btn-neutral float-left" title="MultiTile"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ITilemapModule/" class="btn btn-neutral float-right" title="ITilemapModule">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../MultiTile/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ITilemapModule/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

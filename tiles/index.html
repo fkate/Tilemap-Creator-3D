@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Tiles - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tiles";
+        var mkdocs_page_input_path = "tiles.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Tiles</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-tile-meshes">Creating Tile Meshes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-tiles">Adding Tiles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#general-tile-settings">General tile settings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#collider-types">Collider types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#auto-tiles-and-tile-masks">Auto Tiles and Tile masks</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#auto-tile-settings">Auto tile settings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#optimization-tips">Optimization tips</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../modules/">Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extensions/">Writing Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/Tilemap3D/">Tilemap3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapData/">TilemapData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/AutoTile/">AutoTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapSettings/">TilemapSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Manual &raquo;</li>
+      <li>Tiles</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tiles">Tiles</h1>
+<h2 id="creating-tile-meshes">Creating Tile Meshes</h2>
+<p><img alt="Blender" src="../img/blender.png" /></p>
+<p>For this section I assume you are somewhat familiar with 3D modelling tools and importing assets into Unity. <br></p>
+<ul>
+<li>
+<p>Tiles should match the grid size within the tilemap (1x1x1unit tile should also have those bounds for the mesh)</p>
+</li>
+<li>
+<p>Pivots are always in the center of the gridsize. A 1m tile would have it's pivot at 0.5m. Tiles can go outside of their bounds in which case the pivot should be the center of the lowest tile element.</p>
+</li>
+<li>
+<p>The recommended orientation for the tiles should be how a corner would match a transform gizmo (borders on X and Z and Y up).</p>
+</li>
+<li>
+<p>Make sure meshes are imported with their Y axis facing up and Z axis forward since the tool will not fix your rotation for you.</p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Skeletal or shapekey animations are not supported! They would be very expensive in a combined mesh.
+Please consider animations via gameobjects or a shader using either an uv offset loop or vertex color offsets.</p>
+</div>
+<h2 id="adding-tiles">Adding Tiles</h2>
+<p>Right click in your project browser and choose <strong>[MapTool &gt; TileType]</strong>. <br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Single</td>
+<td align="left">Basic tile</td>
+</tr>
+<tr>
+<td align="left">Multi</td>
+<td align="left">Supports variations for a clean grouping of tiles in the browser</td>
+</tr>
+<tr>
+<td align="left">Auto</td>
+<td align="left">Sub tiles that get choosen depending on their neighbours</td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-tile-settings">General tile settings</h2>
+<p><img alt="Tile-Settings" src="../img/tile-settings.png" /></p>
+<p>Each tile has a number of default settings that need to be configured. <br>
+Materials are shared by all the sub variations of a tile. <br>
+The same goes for collision layer and the NavMesh specific Navigation Area. <br>
+<br>
+Next up we have the Tile Information. <br>
+On a single tile you have one while on multi and auto tiles you have a list of them (auto tile has an additional mask per tile).</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The preview at the bottom of the inspector always shows the currently selected tile variation. You can use the small gizmo in it's corner to rotate it or left click the gizmo to choose from a selection of pre set orientations. The orientation of the preview will also be used for the tile icon in the tile explorer.</p>
+</div>
+<h2 id="collider-types">Collider types</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">None</td>
+<td align="left">No collision</td>
+</tr>
+<tr>
+<td align="left">Box</td>
+<td align="left">Full tile collision. Should be choosen most of the time for optimal collider performance</td>
+</tr>
+<tr>
+<td align="left">Box extend</td>
+<td align="left">Full tile collision that extends upwards until it hits another tile</td>
+</tr>
+<tr>
+<td align="left">Mesh bounds</td>
+<td align="left">Generates a box using Mesh.bounds as  it's size. Optimal for objects that are mostly cubic</td>
+</tr>
+<tr>
+<td align="left">Mesh convex</td>
+<td align="left">Uses collision mesh but ticks the convex option to make it more performant</td>
+</tr>
+<tr>
+<td align="left">Mesh complex</td>
+<td align="left">Worst option but sometimes needed. Uses the collision mesh as it is</td>
+</tr>
+</tbody>
+</table>
+<h2 id="auto-tiles-and-tile-masks">Auto Tiles and Tile masks</h2>
+<p><img alt="Tile-Masks" src="../img/tile-masks.png" /></p>
+<ul>
+<li>
+<p>Auto tiles supports both 4bit masks or 8bit masks (with corners) settable by a dropdown above the tile list.</p>
+</li>
+<li>
+<p>The Tile mask also includes a dropdown for tilemask rotations to reuse the same mesh over multiple directions.</p>
+</li>
+<li>
+<p>The more unique variations are required (corners / patterns) the more sub tiles you will need to configure (Worst case is 53 variations for no rotation 8bit mask).</p>
+</li>
+<li>
+<p>Sub variations within auto tiling are not supported due to the complexity. They can still be added via merge flags though.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Single</td>
+<td align="left">No rotation masks</td>
+</tr>
+<tr>
+<td align="left">Rotated</td>
+<td align="left">Masks for 90° / 180° / 270° rotation</td>
+</tr>
+<tr>
+<td align="left">Flip</td>
+<td align="left">Mask for 180° rotation</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When setting up a 4bit mask do not tick the diagonals. If you set up an 8 bit mask do not tick diagonals without ticked neighbours. These variations would always be optional and therefore are excluded from the algorithm. As the mask itself is used to pick the tile (for quicker lookup) they would never be choosen.</p>
+</div>
+<h2 id="auto-tile-settings">Auto tile settings</h2>
+<ul>
+<li>
+<p>Border behaviour (how does a tile behave at the edge of a map)</p>
+</li>
+<li>
+<p>Orientation (only swap if tiles are intended to be used for a sideway 2.5d map)</p>
+</li>
+<li>
+<p>Merge flag behaviour (can be used to overwrite the flag rules for only this tile for "inner" auto tiles that are used on the inside of others)</p>
+</li>
+</ul>
+<h2 id="optimization-tips">Optimization tips</h2>
+<ul>
+<li>
+<p>Use a texture atlas for your tiles instead of giving all of them their own texture / material. Tiles that share the same material can be combined into a single submesh. If you still need a custom material for a specific tile (example: transparent water) it will become it's own sub mesh later on.</p>
+</li>
+<li>
+<p>Try to stay relativly low poly. The algorithm won't merge tiles at their border points (and can't anyways due to their differences in uv coordinates). This means vertex count optimizations have to happen within the tiles mesh.</p>
+</li>
+<li>
+<p>If all of your tiles don't need normals / tangents / colors cosider turning them off in the mesh module.</p>
+</li>
+<li>
+<p>Consider using inbetween layer variations for muti high tiles that don't include the top part to reduce the total vertex count. Autotiles can be merged via flag so you can still have them on the same layer.</p>
+</li>
+<li>
+<p>If you have slopes or other geometry that would require mesh colliders consider preparing one in blender by hand. That way you can exactly control how many faces the end product has.</p>
+</li>
+<li>
+<p>Consider adding overlay type of tiles (like paths) as zero collision tiles on the layer above the floor. That way they can also overlay borders and corners which would otherwise interfere.</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../getting-started/" class="btn btn-neutral float-left" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../modules/" class="btn btn-neutral float-right" title="Modules">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../getting-started/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../modules/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

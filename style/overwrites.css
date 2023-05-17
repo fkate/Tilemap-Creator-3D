@@ -1,0 +1,171 @@
+:root {
+	--bg-nav: #343131;
+	--bg-nav__active: #272525;
+	--bg-nav__hover: #4e4a4a;
+	--bg-nav__selected: #57a0ef;
+	--c-nav__active: white;
+	--c-nav__selected: #b3b3b3;
+}
+
+.wy-body-for-nav {
+	margin: 0px auto;
+	max-width: 1200px;
+	background: rgba(0,0,0,0.05);
+	font-family: "Open Sans", sans-serif;
+}
+
+.wy-nav-side {
+	top: 0;
+	bottom: 50;
+	height: auto;
+}
+
+@media only screen and (min-width: 769px) {
+	.wy-nav-side {
+		left: inherit;
+	}	
+}
+
+.rst-versions {
+	left: inherit;
+	background-color: var(--bg-nav__active);
+}
+
+.rst-versions .rst-current-version {
+	background-color: var(--bg-nav__active);
+}
+
+.wy-side-nav-search {
+	background-color: var(--bg-nav);
+}
+
+.wy-side-nav-search input {
+	border: none;
+	box-shadow: none;
+	height: 32px;
+}
+
+#rtd-search-form {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.wy-menu-vertical a {
+	color: var(--c-nav__selected);
+	font-weight: bold;
+}
+
+.wy-menu-vertical a:hover {
+	color: var(--c-nav__active);
+	background-color: transparent;
+	font-weight: bold;
+}
+
+.wy-menu-vertical {
+	background: 0;
+	width: 1000px;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+	background: var(--bg-nav__hover);
+	border: none;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a:hover {
+	background: var(--bg-nav__hover);
+}
+
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+	background: none;
+}
+
+.wy-menu-vertical li.toctree-l2.current > a {
+	background: transparent;
+}
+
+.wy-menu-vertical li.current {
+	background: transparent;
+}
+
+.wy-menu-vertical li.current a {
+	color: var(--c-nav__selected);
+	background-color: transparent;
+	border-right: 0;
+}
+
+.wy-menu-vertical li.current a:hover {
+	background-color: transparent;
+	color: var(--c-nav__active);
+}
+
+.wy-menu-vertical li.current > a {
+	background-color: var(--bg-nav__hover);
+	color: var(--c-nav__active);
+	border: 0;
+}
+
+.wy-menu-vertical li.current > a:hover {
+	background-color: transparent;
+}
+
+.wy-menu-vertical li.current > a button.toctree-expand::before {
+	content: "▼";
+	color: var(--c-nav__active);
+	font-weight: bold;
+}
+
+.wy-menu-vertical li button.toctree-expand::before {
+	content: "►";
+	color: var(--c-nav__selected);
+	font-weight: bold;
+}
+
+.icon-home::before {
+	content: "Docs";
+	color: var(--bg-nav__selected);
+}
+
+footer {
+	margin-top: 48px;
+}
+
+h1, h2, h3 {
+	font-family: "Open Sans", sans-serif;
+}
+
+p {
+	margin: 0 0 12px 0;
+}
+
+.rst-content h1 {
+	margin: 0 0 8px 0;
+}
+
+.rst-content h2 {
+	margin: 16px 0 8px 0;
+}
+
+.rst-content img {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.rst-content .section ul li {
+	margin-bottom: 12px;
+}
+
+.category-spacer {
+	width: 100%;
+	height: 64px;
+	background-color: red;
+}
+
+th, td {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+code {
+	margin-bottom: 24px;
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Modules - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Modules";
+        var mkdocs_page_input_path = "modules.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tiles/">Tiles</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Modules</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tilemap-mesh">Tilemap Mesh</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tilemap-collider">Tilemap Collider</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tilemap-navigator">Tilemap Navigator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#known-issues">Known "issues"</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extensions/">Writing Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/Tilemap3D/">Tilemap3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapData/">TilemapData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/AutoTile/">AutoTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapSettings/">TilemapSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Manual &raquo;</li>
+      <li>Modules</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="modules">Modules</h1>
+<h2 id="overview">Overview</h2>
+<p><img alt="Map-Component" src="../img/component-map.png" /></p>
+<p>Modules are used to determine how the given map data is processed. <br>
+They are component based and can therefore be directly added to child gameobjects of a Tilemap component. <br>
+An easier way to add them is via the module list inside the inspector of said component. <br>
+The module list also allows for quick baking of the modules but there are some options only visible when selecting the components directly. <br></p>
+<h2 id="tilemap-mesh">Tilemap Mesh</h2>
+<p><img alt="Mesh-Component" src="../img/component-mesh.png" /></p>
+<p>Module for baking the mesh. It uses Unitys job system together with the tile list and data to generate the visual representation. <br>
+The mesh module has two settings: <br></p>
+<ul>
+<li>
+<p><strong>Chunk Size:</strong>
+This option allows splitting large tilemaps into multiple game objects which can then each be culled individually. Using a value of 0 or below will cause the tilemap to not generate any sub chunks on the given axis. Values are in grid units. Hit bake and you can see the sub objects being generated as children.</p>
+</li>
+<li>
+<p><strong>Vertex Info:</strong>
+Opening this foldout will reveal a bunch of available vertex data types. The underlying algorithm will only copy ticked data from it's tile meshes. It is highly reccomended to only tick boxes you will need on your final mesh since each additional attribute will also increase the size the mesh will take inside the memory.</p>
+</li>
+</ul>
+<h2 id="tilemap-collider">Tilemap Collider</h2>
+<p><img alt="Collider-Component" src="../img/component-collider.png" /></p>
+<p>This module will use the available collision data set inside the tiles to generate an optimized collider. <br>
+It will only generate manually when hitting the bake button on the component or inside the maps module list.<br>
+It is highly reccomeded to rely on as many box colliders as possible since the underlying algorithm will sweep over them and combine them into multiple bigger boxes. <br>
+Mesh colliders on the other hand will be copied one at a time since Unitys Mesh Collider type does not offer any option to offset them and combining the meshes would cause their bounding box to grow much larger. <br>
+If tiles have different layer masks the resulting colliders will be placed on seperrate game objects.<br>
+If the components gameobject is set to static all colliders will also be set to static.</p>
+<h2 id="tilemap-navigator">Tilemap Navigator</h2>
+<p><img alt="Navigator-Component" src="../img/component-navigator.png" /></p>
+<p>This module is used to bake a Unity NavMesh from the tilemap data. The component will use tiles with collision types of Box, MeshBounds, MeshConvex and MeshComplex only. <br>
+Like with the collision the baking process has to be called manualy. <br>
+The module has a few settings: <br></p>
+<ul>
+<li>
+<p><strong>Agent Type:</strong> The NavMesh generation will refer to the coresponding agent settings from Unitys navigation window. Try adding your own or modify the default one.</p>
+</li>
+<li>
+<p><strong>Generation Settings:</strong> Additionaly you can provide a number of generation related settings in the foldout. Refer to the page NavMeshBuildSettings inside of Unitys official documentation if you want to know what each setting does.</p>
+</li>
+<li>
+<p><strong>Navigation Links:</strong> Since Unitys component based NavOffLinks did not work with the generated NavMesh this module instead provides it's own way to generate said links. Use the <strong>+</strong> button on the list to add a new link. <br>
+Each link consinsts of the following options:</p>
+<ul>
+<li>Area dropdown (the color rect) to select one of the set up areas of the navigation window. Traveling cost will be taken from the coresponding area.</li>
+<li>Two tripplets of coordinates representing the start and end position of the link in grid space.</li>
+<li>Toggle button between the coordinates signaling if the link can be traveled in both directions.</li>
+</ul>
+</li>
+</ul>
+<p>Navigation links are also visualized in the scene view where it is also possible to select their start and end point and move it around. <br>
+The actual generated links are only available at runtime which enables the the component to clean them up when they are no longer needed. <br></p>
+<h2 id="known-issues">Known "issues"</h2>
+<p>There is a list of things that can go wrong when using the modules in unintended ways. These are either hard to fix or would have an unecessary impact on performance: <br></p>
+<ul>
+<li>
+<p>When copy pasting a whole map temporary references are also copied. This means editing will also update the old one. To fix this simply delete and readd the modules after duplication</p>
+</li>
+<li>
+<p>You might encounter null pointer exception when deleting generated sub modules by hand. These have cached elements for consecutive rebuilding. Please do not clear them by hand and instead either use the clear button or delete the whole module</p>
+</li>
+<li>
+<p>When updating some components at runtime you might run into an error regarding the meshes. A lot of performed operations require a tick in the checkbox "Read/Write" in the mesh importer</p>
+</li>
+<li>
+<p>The collider component is unfit for consecutive runtime refreshes. Unitys colliders are components so it has to create and destroy quite a few of them. If you need a more dynamic solution either look into Unitys Job based physics or create your own logic (full tile collision could easily be implemented by checking directly against the Tilemap.Data array)</p>
+</li>
+<li>
+<p>There is no tile specific navigation or pathfinding in Unitys NavMesh. If you need a more tile based algorithm you can try implementing an A* approach</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tiles/" class="btn btn-neutral float-left" title="Tiles"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../samples/" class="btn btn-neutral float-right" title="Samples">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../tiles/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../samples/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

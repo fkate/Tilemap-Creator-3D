@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Getting started - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Getting started";
+        var mkdocs_page_input_path = "getting-started.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Getting started</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-instructions">Install instructions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-your-first-map">Setting up your first map</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-your-tiles">Setting up your tiles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#navigating-the-scene-view">Navigating the scene view</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#input-mapping">Input mapping</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#toolbar">Toolbar</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tiles/">Tiles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../modules/">Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extensions/">Writing Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/Tilemap3D/">Tilemap3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapData/">TilemapData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/AutoTile/">AutoTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapSettings/">TilemapSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Manual &raquo;</li>
+      <li>Getting started</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="getting-started">Getting started</h1>
+<h2 id="install-instructions">Install instructions</h2>
+<p>Start a new Unity Project and navigate to the Package Manager (Window &gt; Package Manager). <br>
+Open the [+] dropdown and select "Add package from git URL ...". The URL is the adress of this repository. <br>
+Please refer to the documentation for it's usage. <br>
+Install the sample project for a usecase example. <br></p>
+<h2 id="setting-up-your-first-map">Setting up your first map</h2>
+<p><img alt="Map-Component" src="../img/component-map.png" /></p>
+<p>Create an empty gameobject and select <strong>[AddComponent &gt; <img alt="Map-Component" src="../img/mapicon.png" /> Tilemap3D]</strong>. <br>
+You will be greeted with the interface above (the modules list will be empty). <br>
+Start by deciding on the grid size (width height and depth of a single tile) and the map size. <br>
+Map size can be changed later but keep in mind that map tile data culled in the process will be lost forever.<br>
+Lastly you can find the module list. Start by clicking the little <img alt="Map-Component" src="../img/mapiconadd.png" />  at the bottom and choose a TilemapMesh module. Painted tiles should now be visible. <br></p>
+<h2 id="setting-up-your-tiles">Setting up your tiles</h2>
+<p><img alt="Tile-Explorer" src="../img/tile-explorer.png" /></p>
+<p>The topic on how to set up tiles is discussed on the next sub page. If this is your first time using the tool you can use the included samples which already have pre set up tiles available. <br>
+<br>
+With our map set up our next step will be to add some tiles to our palette. <br>
+In the Unity menu bar navigate to <strong>[Window &gt; TileExplorer]</strong>.<br>
+This will open up a small window that can be docked anywhere inside the editor environment. <br></p>
+<ul>
+<li>
+<p>The explorer will always show the palette of the current selected map so make sure to select the gameobject holding ours (if you created the map with the explorer open you need to deselect and reselect the map to refresh).</p>
+</li>
+<li>
+<p>To add new Tiles to the palette simply drag and drop tiles from your project browser into the palette (one tile at a time).</p>
+</li>
+<li>
+<p>Tiles inside the palette also have a right click menu that allows deleting or swapping them out.</p>
+</li>
+</ul>
+<p>Once we have a collection of tiles ready the current painting index can be selected by clicking the desired tile inside the grid.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Don't have any tiles? Either try using the ones that are provided in the sample project or refer to the page "tile-setup" for how to make your own</p>
+</div>
+<h2 id="navigating-the-scene-view">Navigating the scene view</h2>
+<p><img alt="Scene-View" src="../img/preview.png" /></p>
+<p>If a valid map is selected the scene view inside Unity should display a new grid. This grid is used to determine on which layer our tiles are painted. <br>
+The painting feature is based on dragging out boxes so let's start by clicking somewhere on the map and dragging out a selection. Once the right mouse button is released our tiles will be placed. <br>
+The whole tool is navigated by a few key combos. <br></p>
+<h2 id="input-mapping">Input mapping</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Input</th>
+<th align="left">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Right click</td>
+<td align="left">Place tile (hold for dragging out a box)</td>
+</tr>
+<tr>
+<td align="left">Right click + Shift</td>
+<td align="left">Delete tile. (hold for dragging out a box)</td>
+</tr>
+<tr>
+<td align="left">Left click + Shift</td>
+<td align="left">Pick a tile</td>
+</tr>
+<tr>
+<td align="left">W Key</td>
+<td align="left">Move grid up one layer</td>
+</tr>
+<tr>
+<td align="left">S Key</td>
+<td align="left">Move grid down one layer</td>
+</tr>
+<tr>
+<td align="left">A Key</td>
+<td align="left">Rotate tile clockwise</td>
+</tr>
+<tr>
+<td align="left">D Key</td>
+<td align="left">Rotate tile counter clockwise</td>
+</tr>
+<tr>
+<td align="left">A Key + Shift</td>
+<td align="left">Move to the previous tile variation (if available)</td>
+</tr>
+<tr>
+<td align="left">D Key + Shift</td>
+<td align="left">Move to the next tile variation (if available)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Sometimes Unity messes with the key focus. In that case simply refresh by tapping middle mouse or left click and try again.</p>
+</div>
+<h2 id="toolbar">Toolbar</h2>
+<p><img alt="Tile-Toolbar" src="../img/tile-toolbar.png" /></p>
+<p>The tool also comes with it's own toolbar. <br>
+If the toolbar does not show press the <strong>space key</strong> somewhere in the scene view and select <strong>[Tilemap-Brush]</strong> in the popup. <br>
+The toolbar panel can be docked anywhere inside the interface. It consists of three elements: <br></p>
+<ul>
+<li>
+<p><strong>Grid:</strong> This doubles as a toggle to show or hide the tilemap grid and a dropdown.
+You can change the major axis (useful if working on a 2.5d map) or how the brush is previewed.
+While the <strong>Material</strong> preview is more accurate <strong>Shape</strong> can be seen through the map.</p>
+</li>
+<li>
+<p><strong>Tile:</strong> The second dropdown can be used to manualy set the brushes settings in case you are not able to use the earlier input mappings. Additionaly you can find an option for tile randomization. Just don't forget to turn it off again once you are done.</p>
+</li>
+<li>
+<p><strong>Flags:</strong> Lastly we have a list of registered flags which are written into the painted tiles. The package only uses two of the eight available spaces for it's auto tiling. By using either of them you can force different tiles to behave as if they have the same source.</p>
+</li>
+</ul>
+<hr />
+<p>That's it for the basic introduction. Please refer to the other pages for a detailed explanation of the modules and tiles. <br>
+If you encounter any tool breaking bugs that are not mentioned inside the documentation please open an issue on the github page. <br></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tiles/" class="btn btn-neutral float-right" title="Tiles">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tiles/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

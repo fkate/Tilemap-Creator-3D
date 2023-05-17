@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>FAQ - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FAQ";
+        var mkdocs_page_input_path = "faq.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tiles/">Tiles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../modules/">Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extensions/">Writing Extensions</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">FAQ</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#can-this-be-used-to-create-games-of-genre-x">Can this be used to create games of genre X?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-only-unity-2021">Why only Unity 2021+</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#where-can-i-find-the-documentation">Where can I find the documentation?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#is-this-urphdrp-compatible">Is this URP/HDRP compatible?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#is-the-tilemap-runtime-compatible">Is the tilemap runtime compatible?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#i-have-an-issue">I have an issue?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-is-it-not-on-the-asset-store">Why is it not on the Asset Store?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#can-i-include-this-as-part-of-a-commercial-offering">Can I include this as part of a commercial offering?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#where-do-i-get-the-tile-meshes-from">Where do I get the tile meshes from?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#can-i-contribute">Can I contribute?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#i-created-something-using-the-package-custom-module-or-game">I created something using the package? (custom module or game)</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/Tilemap3D/">Tilemap3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapData/">TilemapData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/AutoTile/">AutoTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapSettings/">TilemapSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Manual &raquo;</li>
+      <li>FAQ</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="faq">FAQ</h1>
+<h2 id="can-this-be-used-to-create-games-of-genre-x">Can this be used to create games of genre X?</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Genre</th>
+<th align="left">Support</th>
+<th align="left">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Topdown</td>
+<td align="left">Yes</td>
+<td align="left">Main focus of the tool</td>
+</tr>
+<tr>
+<td align="left">Rougelike</td>
+<td align="left">Yes</td>
+<td align="left">Procedural map generation not included</td>
+</tr>
+<tr>
+<td align="left">2.5D</td>
+<td align="left">"Yes"</td>
+<td align="left">Limited support on modules</td>
+</tr>
+<tr>
+<td align="left">2D</td>
+<td align="left">No</td>
+<td align="left">Use Unity Tilemap instead</td>
+</tr>
+<tr>
+<td align="left">Blockgame</td>
+<td align="left">No</td>
+<td align="left">Data is stored in a fixed length array (not intended for huge worlds)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="why-only-unity-2021">Why only Unity 2021+</h2>
+<p>Unity 2019 does not support the new Mesh API and 2020 does not support custom toolbars.</p>
+<h2 id="where-can-i-find-the-documentation">Where can I find the documentation?</h2>
+<p>There is a subfolder called ~Documentation. In there you can find a selection of articles about the general usage.</p>
+<h2 id="is-this-urphdrp-compatible">Is this URP/HDRP compatible?</h2>
+<p>Yes.</p>
+<h2 id="is-the-tilemap-runtime-compatible">Is the tilemap runtime compatible?</h2>
+<p>Yes and no. All the tile logic and meshing methods should be usable at runtime.<br>
+The interface is Unity Editor only though so you will have to write your own runtime interface.</p>
+<h2 id="i-have-an-issue">I have an issue?</h2>
+<p>Since this is a hobby project I do not offer live support. If you encountered a bug file an issue on the repository page. <br>
+If it's about a feature request or something covered in the FAQ I might not feel inclined to answer though.</p>
+<h2 id="why-is-it-not-on-the-asset-store">Why is it not on the Asset Store?</h2>
+<p>a) I don't see a lot of value from selling it. The maintenance cost / revenue ballance does not seem worth it <br>
+b) I want to give users the ability to easily accsess and learn from the code <br></p>
+<h2 id="can-i-include-this-as-part-of-a-commercial-offering">Can I include this as part of a commercial offering?</h2>
+<p>Please do not sell the source or include it inside a product sold via the Asset Store. <br>
+Everything else is totally fine with me and covered by the license.</p>
+<h2 id="where-do-i-get-the-tile-meshes-from">Where do I get the tile meshes from?</h2>
+<p>Sources of compatible 3D meshes are not common so you are for most part on your own. <br>
+You can use a modeling tool like Blender to create your own tiles. There is a section in the documentation that goes over this topic.</p>
+<h2 id="can-i-contribute">Can I contribute?</h2>
+<p>The package itself is feature complete and I would like to keep the amount of contributors to a minimum so in most cases the answer is no. <br>
+To avoid bloating the package itself new features are intended to be added as modules (check the documentation and the WorldMapSample to get a genreal idea). <br>
+If you require some larger scale modifications to the source please create a fork instead.</p>
+<h2 id="i-created-something-using-the-package-custom-module-or-game">I created something using the package? (custom module or game)</h2>
+<p>Feel free to drop me a message (mail is at the bottom of my portfolio page) and I will give you a shoutout in the documentation.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../extensions/" class="btn btn-neutral float-left" title="Writing Extensions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../api/Tilemap3D/" class="btn btn-neutral float-right" title="Tilemap3D">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../extensions/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../api/Tilemap3D/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

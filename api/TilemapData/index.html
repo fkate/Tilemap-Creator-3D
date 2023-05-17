@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>TilemapData - Tilemap Creator 3D Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../style/overwrites.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "TilemapData";
+        var mkdocs_page_input_path = "api/TilemapData.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tiles/">Tiles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modules/">Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../samples/">Samples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extensions/">Writing Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scripting API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Tilemap3D/">Tilemap3D</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">TilemapData</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilePalette/">TilePalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BaseTile/">BaseTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../SingleTile/">SingleTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../MultiTile/">MultiTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AutoTile/">AutoTile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ITilemapModule/">ITilemapModule</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapMesh/">TilemapMesh</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapCollider/">TilemapCollider</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapNavigator/">TilemapNavigator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapSettings/">TilemapSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../TilemapGUIUtility/">TilemapGUIUtility</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Tilemap Creator 3D Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Scripting API &raquo;</li>
+      <li>TilemapData</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tilemapdata">TilemapData</h1>
+<p>Struct holding the tilemap data inside a one dimensional int array. The array can be accessed via a set of methods. <br></p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">int</td>
+<td align="left">Width</td>
+<td align="left">Width of the volume</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Height</td>
+<td align="left">Height of the volume</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Depth</td>
+<td align="left">Depth of the volume</td>
+</tr>
+<tr>
+<td align="left">int3</td>
+<td align="left">Size</td>
+<td align="left">Width height and depth of the volume</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Length</td>
+<td align="left">Length of the data array</td>
+</tr>
+<tr>
+<td align="left">TileMapData.Tile</td>
+<td align="left">this[int, int, int]</td>
+<td align="left">Indexer to data from coordinate tripplet</td>
+</tr>
+<tr>
+<td align="left">TileMapData.Tile</td>
+<td align="left">this[int3]</td>
+<td align="left">Indexer to data from int3</td>
+</tr>
+<tr>
+<td align="left">TileMapData.Tile</td>
+<td align="left">this[int]</td>
+<td align="left">Indexer directly to raw data array</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">TilemapData(int width, int height, int depth)</td>
+<td align="left">Constructor</td>
+</tr>
+<tr>
+<td align="left">GetIndex(int x, int y, int z)</td>
+<td align="left">Convert position to array index</td>
+</tr>
+<tr>
+<td align="left">InRange(int x, int y, int z)</td>
+<td align="left">Check if position is inside volume</td>
+</tr>
+<tr>
+<td align="left">InRange(int index)</td>
+<td align="left">Check if index is inside data array</td>
+</tr>
+<tr>
+<td align="left">Resize(int width, int height, int depth)</td>
+<td align="left">Resize the data volume while maintaining content</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br></p>
+<h1 id="tilemapdatatile">TilemapData.Tile</h1>
+<p>Helper struct to convert stored integer into four bytes. <br></p>
+<h2 id="properties_1">Properties</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>byte</strong></td>
+<td align="left">id</td>
+<td align="left">Index of the tile data. Zero index means empty tile</td>
+</tr>
+<tr>
+<td align="left"><strong>byte</strong></td>
+<td align="left">variant</td>
+<td align="left">Subvariant of the given index</td>
+</tr>
+<tr>
+<td align="left"><strong>byte</strong></td>
+<td align="left">rotation</td>
+<td align="left">Rotation between 0-3</td>
+</tr>
+<tr>
+<td align="left"><strong>byte</strong></td>
+<td align="left">flags</td>
+<td align="left">Aditional bitflags stored inside a byte</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="methods_1">Methods</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GetFlags()</td>
+<td align="left">Get flags as TileFlags bit mask</td>
+</tr>
+<tr>
+<td align="left">HasFlag(TileFlags flag)</td>
+<td align="left">Check if the tile has the given flag. Returns bool</td>
+</tr>
+<tr>
+<td align="left">GetRotation()</td>
+<td align="left">Get rotation as a quaternion</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br></p>
+<h1 id="tilemapdatautility">TilemapDataUtility</h1>
+<p>Static extension methods for TilemapData. <br></p>
+<h2 id="static-methods">Static Methods</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CopyData(this TilemapData target, TilemapData source, int3 pos)</td>
+<td align="left">Copy data from source to target starting at the set position</td>
+</tr>
+<tr>
+<td align="left">ClearArea(this TilemapData data, int3 pos, int3 size)</td>
+<td align="left">Clear all data in the given area</td>
+</tr>
+<tr>
+<td align="left">Clear(this TilemapData data)</td>
+<td align="left">Clear the whole TilemapData array</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Tilemap3D/" class="btn btn-neutral float-left" title="Tilemap3D"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../TilePalette/" class="btn btn-neutral float-right" title="TilePalette">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Tilemap3D/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../TilePalette/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
