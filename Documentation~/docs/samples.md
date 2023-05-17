@@ -7,6 +7,7 @@
 - Navigation scene shows how to use the navigator component to build a NavMesh
 - 2D scene focues on setting up tiles on the XY axis
 - Includes a shader to show an example for animated tiles (via uv offset)
+- (New) Simple example for generating dungeons from map prefabs
 
 ## WorldMapSample
 - Shows implementation of a custom tile type and module (Prefab based)

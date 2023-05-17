@@ -1,7 +1,9 @@
 // Copyright (c) 2023 Felix Kate. BSD-3 license (see included license file)
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.EditorCoroutines.Editor;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -14,8 +16,8 @@ namespace TilemapCreator3D.EditorOnly {
 
         private TilemapCursor _cursor;
 
-        private Object _dragReference;
-        private GameObject _dragObject;
+        private EditorCoroutine _dragCorountine;
+        private bool _lockDrag;
 
         private Tilemap3D _map;
         private TilemapSettings _settings;
@@ -30,11 +32,10 @@ namespace TilemapCreator3D.EditorOnly {
             _cursor = new TilemapCursor(_map);
             _cursor.Apply += SetTiles;
 
-            _dragReference = null;
-            _dragObject = null;
             Undo.undoRedoPerformed += OnUndoRedo;
 
             _map.RefreshModules();
+            _map.BakeDynamic();
         }
 
 
@@ -181,6 +182,8 @@ namespace TilemapCreator3D.EditorOnly {
                         _map.RefreshModules();
                         _map.BakeDynamic();
                         GetModules();
+
+                        SaveChanges();
                     }, type);
                 }
             }
@@ -202,12 +205,14 @@ namespace TilemapCreator3D.EditorOnly {
                 List<ITilemapModule> modules = _map.Modules;
 
                 foreach(ITilemapModule module in modules) module.Bake(_map);
+                SaveChanges();
             });
 
             menu.AddItem(new GUIContent("Clear"), false, () => {
                 List<ITilemapModule> modules = _map.Modules;
 
                 foreach(ITilemapModule module in modules) module.Clear();
+                SaveChanges();
             });
 
             menu.ShowAsContext();
@@ -230,16 +235,19 @@ namespace TilemapCreator3D.EditorOnly {
                         
                 menu.AddItem(new GUIContent("Bake"), false, () => {
                     module.Bake(_map);
+                    SaveChanges();
                 });
 
                 menu.AddItem(new GUIContent("Clear"), false, () => {
                     module.Clear();
+                    SaveChanges();
                 });
 
                 menu.AddItem(new GUIContent("Delete"), false, () => {
                     DestroyImmediate((module as Behaviour).gameObject);
                     _map.RefreshModules();
                     GetModules();
+                    SaveChanges();
                 });
 
                 menu.ShowAsContext();
@@ -263,7 +271,7 @@ namespace TilemapCreator3D.EditorOnly {
             if(ev.newValue.x != _map.GridSize.x ||ev.newValue.y != _map.GridSize.y || ev.newValue.z != _map.GridSize.z) {
                 _map.GridSize = ev.newValue;
 
-                EditorUtility.SetDirty(_map);
+                SaveChanges();
             }   
         }
 
@@ -273,7 +281,7 @@ namespace TilemapCreator3D.EditorOnly {
                 _map.Data.Resize(ev.newValue.x, ev.newValue.y, ev.newValue.z);
                 _map.BakeDynamic();
 
-                EditorUtility.SetDirty(_map);
+                SaveChanges();
             }   
         }
 
@@ -286,7 +294,7 @@ namespace TilemapCreator3D.EditorOnly {
         public void OnSceneGUI() {
             _settings.SyncToMap(_map);
             bool inBounds = _cursor.Update();
-            _cursor.SetVisible(_dragObject == null);
+            _cursor.SetVisible(_dragCorountine == null);
 
             HandleSceneDrag(inBounds);
         }
@@ -295,57 +303,45 @@ namespace TilemapCreator3D.EditorOnly {
         // Handle custom drag event for gameobjects
         private void HandleSceneDrag(bool inBounds) {
             Event ev = Event.current;
+            if(inBounds) {
 
-            // Stop internal drag and drop behavour. Without proper stopping of the internal scenedrag it has to happen while still in the project hierachy (so no mixing of both)
-            if(DragAndDrop.objectReferences.Length > 0) {
-                GameObject reference = DragAndDrop.objectReferences[0] as GameObject;
+                // Use corountine to overwrite drag position
+                if(!_lockDrag && _dragCorountine == null && DragAndDrop.objectReferences.Length > 0) {
+                    GameObject reference = DragAndDrop.objectReferences[0] as GameObject;
 
-                if(reference != null && reference.scene.name == null && PrefabUtility.IsPartOfAnyPrefab(reference)) {
-                    _dragReference = reference;
-                    DragAndDrop.objectReferences = null;
+                    if(reference != null && reference.scene.name == null && PrefabUtility.IsPartOfAnyPrefab(reference)) {
+                        // Find internal drag object
+                        IEnumerable<GameObject> objects = FindObjectsOfType<GameObject>().Where(obj => obj.name == reference.name && obj.hideFlags == HideFlags.HideInHierarchy);
 
+                        if(objects.Count() > 0) _dragCorountine = EditorCoroutineUtility.StartCoroutine(DragEnumerator(objects.First()), _map);
+
+                        // Lock drag to prevent further searches for the same drag
+                        _lockDrag = true;
+                    }
                 }
+
+            } else {
+                if(_dragCorountine != null) {
+                    EditorCoroutineUtility.StopCoroutine(_dragCorountine);
+                    _dragCorountine = null;
+                }
+
+                _lockDrag = false;
+            }
+        }
+
+
+        // Overwrite internal drag objects position
+        private IEnumerator DragEnumerator(GameObject target) {           
+            Transform trs = target.transform;
+
+            while(target != null && target.hideFlags == HideFlags.HideInHierarchy) {
+                trs.position = _map.GridToWorld(_cursor.Position, new float3(0.5f, 0.0f, 0.5f));
+
+                yield return null;
             }
 
-            switch(ev.type) {
-                case EventType.DragUpdated:
-                    if(_dragReference != null && inBounds) {
-                        DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
-
-                        _dragObject = PrefabUtility.InstantiatePrefab(_dragReference) as GameObject;
-                        _dragObject.hideFlags = HideFlags.HideInHierarchy;
-
-                        _dragReference = null;
-                    }
-
-                    if(_dragObject != null) {
-                        if(inBounds) {
-                            Transform trs = _dragObject.transform;
-
-                            trs.position = _map.GridToWorld(_cursor.Position, new float3(0.5f, 0.0f, 0.5f));
-
-                            _dragObject.SetActive(true);
-                        } else {
-                            _dragObject.SetActive(false);
-                        }
-                    }
-
-                    return;
-
-                case EventType.DragExited:
-                    if(_dragObject != null) {
-                        if(inBounds) {
-                            _dragObject.hideFlags = HideFlags.None;
-                        } else {
-                            DestroyImmediate(_dragObject);
-                        }
-
-                        _dragObject = null;
-                    }
-
-                    return;
-
-            }
+            _dragCorountine = null;
         }
 
 
@@ -357,8 +353,12 @@ namespace TilemapCreator3D.EditorOnly {
             Box3D rebakeArea = _map.PostProcessTiles(result.Area);
 
             _map.BakeDynamic(rebakeArea);
-            EditorUtility.SetDirty(target);
+            SaveChanges();
         }
+
+
+        // Push changes to hierachy
+        private void SaveChanges() => EditorUtility.SetDirty(_map);
 
     }
 }

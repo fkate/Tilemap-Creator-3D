@@ -21,7 +21,7 @@ namespace TilemapCreator3D {
         public enum CompoundType : int {
             Single = 0,
             Rotated = 1,
-            Flip = 2,
+            Flip = 2
         }
 
         public CompoundType Type;

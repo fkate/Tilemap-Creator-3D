@@ -23,3 +23,6 @@ MonoBehaviour:
   - Mesh: {fileID: 4577232861118397152, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
     CollisionMesh: {fileID: 0}
     Collision: 1
+  - Mesh: {fileID: -5238860493069978881, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    CollisionMesh: {fileID: -6616163939135029807, guid: d9f09a1bfd240c040b9587b93ecdb0c3, type: 3}
+    Collision: 4

@@ -86,8 +86,13 @@ namespace TilemapCreator3D {
             for(int i = 0; i < Length; i++) {
                 int result = Variants[i].Mask.CompareMask(mask);
 
-                if(result >= 0) data[index] = new TilemapData.Tile { id = tile.id, variant = (byte) i, rotation = (byte) result, flags = tile.flags };
+                if(result >= 0) {
+                    data[index] = new TilemapData.Tile { id = tile.id, variant = (byte) i, rotation = (byte) result, flags = tile.flags };
+                    return;
+                }
             }
+
+            data[index] = new TilemapData.Tile { id = tile.id, variant = 0, rotation = 0, flags = tile.flags };
         }
 
         private bool CompareTiles(TilemapData.Tile a, TilemapData.Tile b) {

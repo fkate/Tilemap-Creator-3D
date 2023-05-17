@@ -46,6 +46,7 @@ namespace TilemapCreator3D {
         [Tooltip("Size of chunk in grid units. Zero or smaller results in the max of the dimension.")] public int3 ChunkSize = new int3(0, 0, 0);
         [Tooltip("Include attributes in baking process.")] public RawMeshCombineSettings VertexInfo = new RawMeshCombineSettings { Normal = true, UV0 = true };
         [SerializeField] private ChunkData[] _chunks;
+        [SerializeField, HideInInspector] private int _generationID;
           
         // Some cached values to increase consecutive calls
         private Dictionary<Material, int> _materials;
@@ -95,7 +96,10 @@ namespace TilemapCreator3D {
 
 
         private void ValidateChunks(int chunkLength) {
-            if(_chunks == null ||_chunks.Length != chunkLength) {
+            int instanceID = gameObject.GetInstanceID();
+            bool isCopy = _generationID != instanceID;
+
+            if(_chunks == null || _chunks.Length != chunkLength || isCopy) {
                 ChunkData[] oldChunks = _chunks == null ? new ChunkData[0] : _chunks;
                 int length = oldChunks == null ? chunkLength : math.max(chunkLength, oldChunks.Length);
 
@@ -105,12 +109,17 @@ namespace TilemapCreator3D {
 
                 for(int i = 0; i < length; i++) {
                     if(i < chunkLength) {
-                        if(oldChunks.Length > i) _chunks[i] = oldChunks[i];
+                        if(oldChunks.Length > i && oldChunks[i].GameObject != null) {
+                            _chunks[i] = oldChunks[i];
+                            if(isCopy) _chunks[i].Filter.sharedMesh = null;
+                        }
                         else {
                             _chunks[i] = new ChunkData (trs, string.Format("Chunk {0}", i.ToString()));
                         }
                     } else if(i >= chunkLength) oldChunks[i].Dispose();
                 }
+
+                _generationID = gameObject.GetInstanceID();
             } 
         }
 
@@ -216,7 +225,6 @@ namespace TilemapCreator3D {
 
                 chunk.GameObject.layer = _layer;
                 chunk.GameObject.isStatic = _isStatic;
-                chunk.GameObject.hideFlags = HideFlags.NotEditable;
                 chunk.GameObject.SetActive(true);
 
             } else {

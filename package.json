@@ -1,7 +1,7 @@
 {
   "name": "com.fkate.tilemap3d",
   "description": "Contains components and editors for authoring three dimensional tilemaps.\nSub component based approach including modules for mesh, collider and NavMesh generation from painted maps.\nIncludes tile types for single, multi and auto tiles.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Tilemap Creator 3D",
   "dependencies": {
     "com.unity.mathematics": "1.2.1",

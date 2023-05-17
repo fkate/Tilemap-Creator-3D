@@ -88,6 +88,14 @@ namespace TilemapCreator3D.EditorOnly {
             EditorGUI.BeginProperty(position, label, property);
 
             float singleLine = EditorGUIUtility.singleLineHeight;
+            float lineOffset = singleLine + EditorGUIUtility.standardVerticalSpacing;
+
+            if(!string.IsNullOrEmpty(label.text)) {
+                GUI.Label(new Rect(position.x, position.y, EditorGUIUtility.labelWidth, singleLine), label);
+                position.x += EditorGUIUtility.labelWidth;
+            }
+
+            position.width = lineOffset * 2 + singleLine - 1;
 
             SerializedProperty typeProperty = property.FindPropertyRelative("Type");
             SerializedProperty maskProperty = property.FindPropertyRelative("Mask");
@@ -100,7 +108,7 @@ namespace TilemapCreator3D.EditorOnly {
         
             TileMaskCompound.CompoundType type = (TileMaskCompound.CompoundType) EditorGUI.EnumPopup(new Rect(position.x, position.y + 3.0f, position.width, singleLine), (TileMaskCompound.CompoundType) typeProperty.enumValueIndex, "ToolbarCreateAddNewDropDown");
 
-            EditorGUI.PropertyField(new Rect(position.x, position.y + offset + 4, position.width, maskHeight), maskProperty, label);
+            EditorGUI.PropertyField(new Rect(position.x, position.y + offset + 4, position.width, maskHeight), maskProperty, new GUIContent());
         
             // Get mask variations by creating a temporary comound variable
             if(EditorGUI.EndChangeCheck()) {
